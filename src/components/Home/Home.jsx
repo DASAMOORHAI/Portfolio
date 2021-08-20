@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FileSaver from 'file-saver';
 import texts from '../../texts';
+import imgs from '../../images/index.js';
 import './Home.css';
 
 const Home = () => {
     const [lang, setLang] = useState('en')
     const [open, setOpen] = useState(false)
+    const [sidebarAnim, setSidebarAnim] = useState(false)
+    const [sidebar, setSidebar] = useState(false)
 
     function handleDownload() {
         FileSaver.saveAs(
@@ -17,6 +20,8 @@ const Home = () => {
     const handleDropdownClose = (e) => {
         if(e.target.name === 'dropdownBtn') {
             document.removeEventListener('mousedown', handleDropdownClose)
+        } else if(e.target.tagName === 'BUTTON') {
+            return null
         } else {
             setOpen(false)
             document.removeEventListener('mousedown', handleDropdownClose)
@@ -28,7 +33,18 @@ const Home = () => {
             case 'dropdownBtn':
                 setOpen(!open)
                 document.addEventListener('mousedown', handleDropdownClose)
-            break;
+                break;
+            case 'sidebarBtn':
+                setSidebarAnim(!sidebarAnim)
+
+                if(!sidebar) {
+                    setSidebar(true)
+                } else {
+                    setTimeout(() => {
+                        setSidebar(false)
+                    }, 500)
+                }
+                break;
             default:
                 break
         }
@@ -65,19 +81,24 @@ const Home = () => {
     }
 
     return (
-        <div>
-            <div className='container'>
-                <button type='button' name='dropdownBtn' onClick={handleChange}>Idioma</button>
-                {open ? 
-                    <div className='dropdown'>
-                        <ul>
-                            <li>Español</li>
-                            <li>English</li>
-                        </ul>
-                    </div>
-                    :
-                    null
-                }
+        <div className='bgImg'>
+            <div className={sidebarAnim ? 'focusSidebar' : 'closed'}/>
+            <img src={imgs.sidebar.open} alt='' onClick={handleChange} className='closedSidebarBtn' name='sidebarBtn'/>
+            <div className={sidebar ? 'sidebar' : 'sidebar' + ' closed'} id={sidebarAnim ? 'open' : 'close'}>
+                <img src={imgs.sidebar.close} alt='' onClick={handleChange} className='openedSidebarBtn' name='sidebarBtn'/>
+                <div className='container'>
+                    <button type='button' name='dropdownBtn' onClick={handleChange}>Idioma</button>
+                    {open ? 
+                        <div className='dropdown'>
+                            <ul>
+                                <li><button type='button' onClick={() => {setLang('es'); setOpen(false)}}>Español</button></li>
+                                <li><button type='button' onClick={() => {setLang('en'); setOpen(false)}}>English</button></li>
+                            </ul>
+                        </div>
+                        :
+                        null
+                    }
+                </div>
             </div>
             <div>
                 <span>Javier Iñaki Carro</span>

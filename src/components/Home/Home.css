@@ -1,3 +1,81 @@
+.bgImg {
+    max-width: 100%;
+    height: auto;
+    background-image: url(../../images/Background.jpg);
+    background-size: 100% 100%;
+}
+
+@keyframes sidebarAniOp {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+@keyframes sidebarAniClo {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+#open {
+    animation-name: sidebarAniOp;
+    animation-direction: reverse;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+#close {
+    animation-name: sidebarAniClo;
+    animation-direction: normal;
+    animation-timing-function: ease-out;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+.sidebar {
+    position: fixed;
+    width: 25%;
+    height: 100%;
+    right: 0px;
+    background-image: url(../../images/SidebarInterior.jpg);
+    background-position: center right;
+    background-repeat: repeat-y;
+}
+.closed {
+    display: none;
+}
+.openedSidebarBtn {
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    left: -83%;
+    z-index: 1;
+}
+.closedSidebarBtn {
+    position: fixed;
+    display: inline-block;
+    height: 100%;
+    width: 25%;
+    right: -4.2%;
+}
+.focusSidebar {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.568);
+    z-index: 0;
+}
+
 .container {
     position: relative;
     display: inline-block;
@@ -10,4 +88,12 @@
     z-index: 2;
     border: 2px solid red;
     background-color: white;
-  }
+}
+
+.test {
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    right: 0px;
+    border: 1px solid red;
+}
