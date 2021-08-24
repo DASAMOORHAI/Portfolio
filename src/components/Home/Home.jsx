@@ -82,24 +82,36 @@ const Home = () => {
 
     return (
         <div className='bgImg'>
-            <div className={sidebarAnim ? 'focusSidebar' : 'closed'}/>
-            <img src={imgs.sidebar.open} alt='' onClick={handleChange} className='closedSidebarBtn' name='sidebarBtn'/>
-            <div className={sidebar ? 'sidebar' : 'sidebar' + ' closed'} id={sidebarAnim ? 'open' : 'close'}>
-                <img src={imgs.sidebar.close} alt='' onClick={handleChange} className='openedSidebarBtn' name='sidebarBtn'/>
-                <div className='container'>
-                    <button type='button' name='dropdownBtn' onClick={handleChange}>Idioma</button>
-                    {open ? 
-                        <div className='dropdown'>
-                            <ul>
-                                <li><button type='button' onClick={() => {setLang('es'); setOpen(false)}}>Español</button></li>
-                                <li><button type='button' onClick={() => {setLang('en'); setOpen(false)}}>English</button></li>
-                            </ul>
-                        </div>
-                        :
-                        null
-                    }
-                </div>
+            <div className='container'>
+                <button type='button' name='dropdownBtn' onClick={handleChange}>Idioma</button>
+                {open ? 
+                    <div className='dropdown'>
+                        <ul>
+                            <li><button type='button' onClick={() => {setLang('es'); setOpen(false)}}>Español</button></li>
+                            <li><button type='button' onClick={() => {setLang('en'); setOpen(false)}}>English</button></li>
+                        </ul>
+                    </div>
+                    :
+                    null
+                }
             </div>
+
+            {/* Cellphone Sidebar */}
+            <div className={sidebarAnim ? 'focusSidebarC' : 'closedC'}/>
+            <img src={imgs.sidebar.open} alt='' onClick={handleChange} className='closedSidebarBtnC' name='sidebarBtn'/>
+            <div className={sidebar ? 'sidebarContainerC' : 'sidebarContainerC' + ' closedC'} id={sidebarAnim ? 'open' : 'close'}>
+                <div className='sidebarC'>
+
+                </div>
+                <img src={imgs.sidebar.close} alt='' onClick={handleChange} className='openedSidebarBtnC' name='sidebarBtn'/>
+            </div>
+
+            {/* Tablet Sidebar */}
+            <div className='sidebarContainerT'>
+
+            </div>
+
+            {/* Desktop Sidebar */}
             <div>
                 <span>Javier Iñaki Carro</span>
                 <span>Fullstack Web Developer</span>
@@ -116,8 +128,8 @@ const Home = () => {
             </div>
             <div>
                 <h2>{texts[lang].contactT}</h2>
-                <Link to={{pathname: "mailto:javier.carro.trabajo@gmail.com"}} target="_blank"><img src='' alt='Gmail'/></Link>
-                <Link to={{pathname: 'https://www.linkedin.com/in/javier-iñaki-carro/'}} target='_blank'><img src='' alt='LinkedIn'/></Link>
+                <Link to={{pathname: "mailto:javier.carro.trabajo@gmail.com"}} target="_blank" rel="noopener noreferrer"><img src='' alt='Gmail'/></Link>
+                <Link to={{pathname: 'https://www.linkedin.com/in/javier-iñaki-carro/'}} target='_blank' rel="noopener noreferrer"><img src='' alt='LinkedIn'/></Link>
             </div>
         </div>
     )
