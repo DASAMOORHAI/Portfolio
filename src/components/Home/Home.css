@@ -4,6 +4,7 @@
     min-height: 100%;
     background-image: url(../../images/Background.jpg);
     background-size: 100% 100%;
+    z-index: 0;
 }
 
 .test {
@@ -11,22 +12,113 @@
     width: 30%;
     height: 100%;
     right: 0px;
-    border: 1px solid red;
+
+}
+
+/* -- Language Selection -- */
+@keyframes langOpen {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes langClose {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#langOpen {
+    animation-name: langOpen;
+    animation-direction: reverse;
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+}
+#langClose {
+    animation-name: langClose;
+    animation-direction: normal;
+    animation-timing-function: ease-out;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
 }
 
 .container {
-    position: relative;
+    position: fixed;
     display: inline-block;
+    height: 7%;
+    width: 11%;
+    top: 2.5%;
+    left: 0px;
+    z-index: 2;
 }
 .dropdown {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 0.5px;
+    left: 45%;
+    height: 98%;
     width: 300px;
-    z-index: 2;
-    border: 2px solid red;
-    background-color: white;
+    border: 5px solid #ecc093;
+    border-radius: 0px 20px 20px 0px;
+    background-color: black;
+    z-index: 0;
 }
+.langList {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 90%;
+    top: -15.5px;
+    right: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.langList li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    border: 3px solid #d1a87e;
+    border-radius: 25%;
+}
+.langBtn {
+    margin: 0px auto;
+    color: white;
+    background: none;
+    border: none;
+    font-family: 'Selznick Remix NF', Arial, sans-serif;
+    font-size: 30px;
+}
+.dropdownBtn {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: #5a3925;
+    border-radius: 0px 20px 20px 0px;
+    border: none;
+    z-index: 1;
+}
+.langIcon {
+    position: absolute;
+    height: 55%;
+    width: 60%;
+    right: 10%;
+    bottom: 22%;
+}
+
+/* ---------------------------------------------- */
+
+/* -- Sidebar -- */
 
 /* Cellphone Styles */
 @keyframes sidebarAniOp {
@@ -70,7 +162,7 @@
     height: 100%;
     top: 0px;
     right: 0px;
-    /* border: 1px solid blue; */
+    z-index: 4;
 }
 .sidebarC {
     position: relative;
@@ -90,7 +182,6 @@
     height: 100%;
     min-width: 83.5%;
     left: 3px;
-    z-index: 1;
     /* border: 1px solid red; */
 }
 .closedSidebarBtnC {
@@ -99,6 +190,7 @@
     height: 100%;
     width: 20%;
     right: 0;
+    z-index: 2;
 }
 .focusSidebarC {
     position: fixed;
@@ -109,7 +201,7 @@
     bottom: 0px;
     left: 0px;
     background-color: rgba(0, 0, 0, 0.568);
-    z-index: 0;
+    z-index: 3;
 }
 
 /* Tablet Styles */
@@ -125,4 +217,20 @@
     background-size: 100%;
     background-repeat: repeat-y;
     /* border: 1px solid blue; */
+}
+
+/* ---------------------------------------------- */
+
+/* -- Texts -- */
+.fullName {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-family: 'Selznick Remix NF', Arial, sans-serif;
+    font-size: 50px;
+    color: white;
+    border: 2px solid red;
+    background-image: url(../../images/TitleBackdrop.png);
+    background-size: 100% 100%;
+    z-index: 1;
 }

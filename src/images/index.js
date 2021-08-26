@@ -1,13 +1,13 @@
 import open from './Sidebar.png';
 import close from './SidebarClose.png';
-import interior from "./SidebarInterior.jpg";
-import full from './SidebarFullOpen.png';
+import globe from './GlobeIcon.png';
 
 export default {
     sidebar: {
         open,
         close,
-        interior,
-        full
+    },
+    page: {
+        globe
     }
 }

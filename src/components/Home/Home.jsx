@@ -8,6 +8,7 @@ import './Home.css';
 const Home = () => {
     const [lang, setLang] = useState('en')
     const [open, setOpen] = useState(false)
+    const [langAnim, setLangAnim] = useState(false)
     const [sidebarAnim, setSidebarAnim] = useState(false)
     const [sidebar, setSidebar] = useState(false)
 
@@ -23,7 +24,10 @@ const Home = () => {
         } else if(e.target.tagName === 'BUTTON') {
             return null
         } else {
-            setOpen(false)
+            setLangAnim(false)
+            setTimeout(() => {
+                setOpen(false)
+            }, 300)
             document.removeEventListener('mousedown', handleDropdownClose)
         }
     }
@@ -31,8 +35,30 @@ const Home = () => {
     function handleChange(e) {
         switch(e.target.name) {
             case 'dropdownBtn':
-                setOpen(!open)
-                document.addEventListener('mousedown', handleDropdownClose)
+                setLangAnim(!langAnim)
+
+                if(!open) {
+                    setOpen(true)
+                    document.addEventListener('mousedown', handleDropdownClose)
+                } else {
+                    setTimeout(() => {
+                        setOpen(false)
+                    }, 300)
+                }
+                break;
+            case 'langEs':
+                setLang('es')
+                setLangAnim(false)
+                setTimeout(() => {
+                    setOpen(false)
+                }, 300)
+                break;
+            case 'langEn':
+                setLang('en')
+                setLangAnim(false)
+                setTimeout(() => {
+                    setOpen(false)
+                }, 300)
                 break;
             case 'sidebarBtn':
                 setSidebarAnim(!sidebarAnim)
@@ -42,11 +68,11 @@ const Home = () => {
                 } else {
                     setTimeout(() => {
                         setSidebar(false)
-                    }, 500)
+                    }, 300)
                 }
                 break;
             default:
-                break
+                break;
         }
     }
 
@@ -83,19 +109,14 @@ const Home = () => {
     return (
         <div className='bgImg'>
             <div className='container'>
-                <button type='button' name='dropdownBtn' onClick={handleChange}>Idioma</button>
-                {open ? 
-                    <div className='dropdown'>
-                        <ul>
-                            <li><button type='button' onClick={() => {setLang('es'); setOpen(false)}}>Español</button></li>
-                            <li><button type='button' onClick={() => {setLang('en'); setOpen(false)}}>English</button></li>
-                        </ul>
-                    </div>
-                    :
-                    null
-                }
+                <button type='button' className='dropdownBtn' name='dropdownBtn' onClick={handleChange}><img name='dropdownBtn' onClick={handleChange} className='langIcon' src={imgs.page.globe} alt='lang'/></button>
+                <div className={open ? 'dropdown' : 'dropdown' + ' closedC'} id={langAnim ? 'langOpen' : 'langClose'}>
+                    <ul className='langList'>
+                        <li><button className='langBtn' type='button' onClick={handleChange} name='langEs'>Español</button></li>
+                        <li><button className='langBtn' type='button' onClick={handleChange} name='langEn'>English</button></li>
+                    </ul>
+                </div>
             </div>
-
             {/* Cellphone Sidebar */}
             <div className={sidebarAnim ? 'focusSidebarC' : 'closedC'}/>
             <img src={imgs.sidebar.open} alt='' onClick={handleChange} className='closedSidebarBtnC' name='sidebarBtn'/>
@@ -113,7 +134,7 @@ const Home = () => {
 
             {/* Desktop Sidebar */}
             <div>
-                <span>Javier Iñaki Carro</span>
+                <span className='fullName'>Javier Iñaki Carro</span>
                 <span>Fullstack Web Developer</span>
                 <p>{texts[lang].desc1}<br/>{texts[lang].desc2}</p>
                 <button onClick={handleDownload}>{texts[lang].curr}</button>
