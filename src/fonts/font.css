@@ -1,5 +1,10 @@
 @font-face {
     font-family: 'Selznick Remix NF';
     src: local('Selznick Remix NF'),
-        url('./SelznickRemixNF.ttf') format('tff');
+        url(./SelznickRemixNF.ttf) format('tff');
+}
+@font-face {
+    font-family: 'Dream Orphans';
+    src: local('Dream Orphans') 
+        url(./DreamOrphans.ttf) format('tff')
 }

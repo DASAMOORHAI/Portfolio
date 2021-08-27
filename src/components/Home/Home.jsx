@@ -82,8 +82,8 @@ const Home = () => {
         return (
             <ul>
                 {skills.map(skill =>
-                    <li>
-                        <img src='' alt=''/> 
+                    <li className='indvSkill'>
+                        <img src={imgs.skills[skill]} alt=''/> 
                         <span>{skill}</span>
                     </li>
                 )}
@@ -133,16 +133,17 @@ const Home = () => {
             </div>
 
             {/* Desktop Sidebar */}
-            <div>
+            <div className='myInfoContainer col-10'>
                 <span className='fullName'>Javier Iñaki Carro</span>
-                <span>Fullstack Web Developer</span>
-                <p>{texts[lang].desc1}<br/>{texts[lang].desc2}</p>
-                <button onClick={handleDownload}>{texts[lang].curr}</button>
+                <span className='myPos'>Fullstack Web Developer</span>
+                <p className='desc'>{texts[lang].desc1}<br/>{texts[lang].desc2}</p>
+                <button className='cvBtn' onClick={handleDownload}>{texts[lang].curr}</button>
             </div>
-            <div>
+            <div className='col-10'>
                 <h2>{texts[lang].skillsT}</h2>
                 <SkillList />
             </div>
+            <div className='clearer'/>
             <div>
                 <h2>{texts[lang].projectsT}</h2>
                 <ProjectList projects={texts[lang].projects}/>

@@ -1,11 +1,12 @@
 * {
   box-sizing: border-box;
+  font-family: 'Dream Orphans', Arial, sans-serif;
+  color: white;
 }
 
 [class*="col-"] {
   float: left;
   padding: 15px;
-  border: 1px solid red;
 }
 .row::after {
   content: "";
