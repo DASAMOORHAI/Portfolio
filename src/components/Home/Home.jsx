@@ -80,10 +80,10 @@ const Home = () => {
         let skills = ['JavaScript', 'React', 'Redux', 'CSS', 'TypeScript', 'Sequelize', 'PostgreSQL', 'ExpressJS', 'NodeJS', 'git']
 
         return (
-            <ul>
+            <ul className='indvSkillContainer'>
                 {skills.map(skill =>
                     <li className='indvSkill'>
-                        <img src={imgs.skills[skill]} alt=''/> 
+                        <img className='indvSkillImg' src={imgs.skills[skill]} alt=''/> 
                         <span>{skill}</span>
                     </li>
                 )}
