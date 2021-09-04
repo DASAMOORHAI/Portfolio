@@ -285,3 +285,29 @@
     border-image-slice: 135 fill;
     border-image-repeat: stretch;
 }
+
+/* -- Projects -- */
+.indvProjectsContainer {
+    position: relative;
+    list-style: none;
+    padding: 0px;
+}
+.indvProject {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding: 15px;
+    border: 5px solid lightyellow;
+    border-image-source: url(../../images/FullTextBox.svg);
+    border-image-slice: 0 fill;
+    border-image-repeat: stretch;
+}
+/* -- Contact -- */
+.contactImgs {
+    display: flex;
+    justify-content: space-around;
+}
+.contactImgs img {
+    height: 80%;
+    width: 40%;
+}

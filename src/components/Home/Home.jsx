@@ -93,12 +93,13 @@ const Home = () => {
 
     function ProjectList({projects}) {
         return (
-            <ul>
+            <ul className='indvProjectsContainer'>
                 {projects.map(project =>
-                    <li>
-                        <img src='' alt=''/>
+                    <li className='indvProject'>
+                        <img src={project.img} alt=''/>
                         <h3>{project.name}</h3>
                         <span>{project.desc}</span>
+                        <br/>
                         <span>{project.tech}</span>
                     </li>
                 )}
@@ -126,13 +127,15 @@ const Home = () => {
                 </div>
                 <img src={imgs.sidebar.close} alt='' onClick={handleChange} className='openedSidebarBtnC' name='sidebarBtn'/>
             </div>
-
+            {/* ----------------- */}
             {/* Tablet Sidebar */}
             <div className='sidebarContainerT'>
 
             </div>
-
+            {/* -------------- */}
             {/* Desktop Sidebar */}
+
+            {/* --------------- */}
             <div className='myInfoContainer col-10'>
                 <span className='fullName'>Javier Iñaki Carro</span>
                 <span className='myPos'>Fullstack Web Developer</span>
@@ -143,16 +146,18 @@ const Home = () => {
                 <h2>{texts[lang].skillsT}</h2>
                 <SkillList />
             </div>
-            <div className='clearer'/>
-            <div>
+            <div className='col-10'>
                 <h2>{texts[lang].projectsT}</h2>
                 <ProjectList projects={texts[lang].projects}/>
             </div>
-            <div>
+            <div className='col-10'>
                 <h2>{texts[lang].contactT}</h2>
-                <Link to={{pathname: "mailto:javier.carro.trabajo@gmail.com"}} target="_blank" rel="noopener noreferrer"><img src='' alt='Gmail'/></Link>
-                <Link to={{pathname: 'https://www.linkedin.com/in/javier-iñaki-carro/'}} target='_blank' rel="noopener noreferrer"><img src='' alt='LinkedIn'/></Link>
+                <div className='contactImgs'>
+                    <Link to={{pathname: "mailto:javier.carro.trabajo@gmail.com"}} target="_blank" rel="noopener noreferrer"><img src={imgs.contact.gmail} alt='Gmail'/></Link>
+                    <Link to={{pathname: 'https://www.linkedin.com/in/javier-iñaki-carro/'}} target='_blank' rel="noopener noreferrer"><img src={imgs.contact.linkedin} alt='LinkedIn'/></Link>
+                </div>
             </div>
+            <div className='clearer'/>
         </div>
     )
 }

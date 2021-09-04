@@ -1,3 +1,5 @@
+import imgs from '../images/index.js';
+
 export default {
     es: {
         desc1: 'Soy un programador muy creativo interesado en aprender nuevas tecnologías de maneras autodidactas.',
@@ -7,13 +9,15 @@ export default {
         projectsT: 'Proyectos',
         projects: [
             {
+                img: imgs.projects.ecom,
                 name: 'Clases E-Commerce', 
-                desc: 'Proyecto final del bootcamp Henry, el cual es un ecommerce de clases 100% funcional en el que se puede hacer el recorrido completo desde la publicación de una clase hasta su compra posterior por un cliente',
+                desc: 'Proyecto final del bootcamp Henry, el cual es un ecommerce de clases 100% funcional en el que se puede hacer el recorrido completo desde la publicación de una clase hasta su compra posterior por un cliente.',
                 tech: 'Las tecnologías utilizadas fueron: React, Redux, TypeScript, ExpressJS, PostgreSQL y Sequelize'
             },
             {
+                img: imgs.projects.poke,
                 name: 'Pokemon App',
-                desc: 'Primer projecto individual, esta aplicación nos permite ver pokemones en una lista paginada, su información al ser clickeados, y crear pokemones propios',
+                desc: 'Primer projecto individual, esta aplicación nos permite ver pokemones en una lista paginada, su información al ser clickeados, y crear pokemones propios.',
                 tech: 'Las tecnologías utilizadas fueron: React y Redux para el Frontend y PostreSQL, Sequelize y Node.JS (Express) para el Backend'
             }
         ],
@@ -27,14 +31,16 @@ export default {
         projectsT: 'Projects',
         projects: [
             {
+                img: imgs.projects.ecom,
                 name: 'E-Commerce Classes', 
-                desc: 'Final project of the Henry bootcamp, which is a 100% functional class ecommerce in which the complete journey can be made from the publication of a class to its subsequent purchase by a client',
+                desc: 'Final project of the Henry bootcamp, which is a 100% functional class ecommerce in which the complete journey can be made from the publication of a class to its subsequent purchase by a client.',
                 tech: 'The used technologies are: React, Redux, TypeScript, ExpressJS, PostgreSQL and Sequelize'
             },
             {
+                img: imgs.projects.poke,
                 name: 'Pokemon App',
-                desc: 'First individual project, this application allows us to see Pokémon in a paginated list, their information when clicked, and create our own Pokémon',
-                tech: 'The used technologies are: React and Redux fir Frontend and PostreSQL, Sequelize and Node.JS (Express) for Backend'
+                desc: 'First individual project, this application allows us to see Pokémon in a paginated list, their information when clicked, and create our own Pokémon.',
+                tech: 'The used technologies are: React and Redux for Frontend and PostreSQL, Sequelize and Node.JS (Express) for Backend'
             }
         ],
         contactT: 'Contact me'

@@ -11,6 +11,10 @@ import ExpressJS from './ExpressLogo.png';
 import git from './git.png';
 import TypeScript from './TypescriptLogo.png';
 import NodeJS from './NodeJSLogo.png';
+import gmail from './Gmail.png';
+import linkedin from './LinkedIn.png';
+import ecom from './EcommerceImg.png';
+import poke from './PokeAppImg.png';
 
 export default {
     sidebar: {
@@ -31,5 +35,13 @@ export default {
         ExpressJS,
         NodeJS,
         git
+    },
+    projects: {
+        ecom,
+        poke
+    },
+    contact: {
+        gmail,
+        linkedin
     }
 }
