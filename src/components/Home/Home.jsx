@@ -12,12 +12,6 @@ const Home = () => {
     const [sidebarAnim, setSidebarAnim] = useState(false)
     const [sidebar, setSidebar] = useState(false)
 
-    function handleDownload() {
-        FileSaver.saveAs(
-            process.env.PUBLIC_URL + `/resource/Javier_Iñaki_Carro_CV_${lang}.pdf`,
-            `Javier Iñaki Carro - CV (${lang.toUpperCase()}).pdf`);
-    }
-
     const handleDropdownClose = (e) => {
         if(e.target.name === 'dropdownBtn') {
             document.removeEventListener('mousedown', handleDropdownClose)
@@ -30,6 +24,20 @@ const Home = () => {
             }, 300)
             document.removeEventListener('mousedown', handleDropdownClose)
         }
+    }
+
+    function handleDownload() {
+        FileSaver.saveAs(
+            process.env.PUBLIC_URL + `/resource/Javier_Iñaki_Carro_CV_${lang}.pdf`,
+            `Javier Iñaki Carro - CV (${lang.toUpperCase()}).pdf`);
+    }
+
+    function handleButtonScroll(e) {
+        document.getElementById(e.target.name).scrollIntoView({behavior: 'smooth'});
+        setSidebarAnim(false)
+        setTimeout(() => {
+            setSidebar(false)
+        }, 300)
     }
 
     function handleChange(e) {
@@ -119,11 +127,14 @@ const Home = () => {
                 </div>
             </div>
             {/* Cellphone Sidebar */}
-            <div className={sidebarAnim ? 'focusSidebarC' : 'closedC'}/>
+            <button className={sidebarAnim ? 'focusSidebarC' : 'closedC'} onClick={handleChange} name='sidebarBtn'/>
             <img src={imgs.sidebar.open} alt='' onClick={handleChange} className='closedSidebarBtnC' name='sidebarBtn'/>
             <div className={sidebar ? 'sidebarContainerC' : 'sidebarContainerC' + ' closedC'} id={sidebarAnim ? 'open' : 'close'}>
                 <div className='sidebarC'>
-
+                    <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='persInfo'>{texts[lang].sidebar.personalInf}</button>
+                    <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='skills'>{texts[lang].sidebar.skillsS}</button>
+                    <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='projects'>{texts[lang].sidebar.projectsS}</button>
+                    <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='contact'>{texts[lang].sidebar.contactS}</button>
                 </div>
                 <img src={imgs.sidebar.close} alt='' onClick={handleChange} className='openedSidebarBtnC' name='sidebarBtn'/>
             </div>
@@ -137,21 +148,21 @@ const Home = () => {
 
             {/* --------------- */}
             <div className='myInfoContainer col-10'>
-                <span className='fullName'>Javier Iñaki Carro</span>
+                <span className='fullName' id='persInfo'>Javier Iñaki Carro</span>
                 <span className='myPos'>Fullstack Web Developer</span>
                 <p className='desc'>{texts[lang].desc1}<br/>{texts[lang].desc2}</p>
                 <button className='cvBtn' onClick={handleDownload}>{texts[lang].curr}</button>
             </div>
             <div className='col-10'>
-                <h2>{texts[lang].skillsT}</h2>
+                <h2 id='skills'>{texts[lang].skillsT}</h2>
                 <SkillList />
             </div>
             <div className='col-10'>
-                <h2>{texts[lang].projectsT}</h2>
+                <h2 id='projects'>{texts[lang].projectsT}</h2>
                 <ProjectList projects={texts[lang].projects}/>
             </div>
             <div className='col-10'>
-                <h2>{texts[lang].contactT}</h2>
+                <h2 id='contact'>{texts[lang].contactT}</h2>
                 <div className='contactImgs'>
                     <Link to={{pathname: "mailto:javier.carro.trabajo@gmail.com"}} target="_blank" rel="noopener noreferrer"><img src={imgs.contact.gmail} alt='Gmail'/></Link>
                     <Link to={{pathname: 'https://www.linkedin.com/in/javier-iñaki-carro/'}} target='_blank' rel="noopener noreferrer"><img src={imgs.contact.linkedin} alt='LinkedIn'/></Link>

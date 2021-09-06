@@ -2,6 +2,7 @@ import imgs from '../images/index.js';
 
 export default {
     es: {
+        sidebar: {personalInf: 'Sobre mi', skillsS: 'Habilidades', projectsS: 'Proyectos', contactS: 'Contáctame'},
         desc1: 'Soy un programador muy creativo interesado en aprender nuevas tecnologías de maneras autodidactas.',
         desc2: 'Cautivado por el arte y con ganas de encontrar un proyecto que me apasione que me permita mejorar mis conocimientos en el mundo de la tecnología',
         curr: 'Currículum',
@@ -24,6 +25,7 @@ export default {
         contactT: 'Contáctame'
     },
     en: {
+        sidebar: {personalInf: 'About me', skillsS: 'Skills', projectsS: 'Proyects', contactS: 'Contact me'},
         desc1: `I'm a very creative programmer interested in learning new technologies with self-taught methods.`,
         desc2: 'Captivated by art and looking for a project that I am passionate about and that permits me to deepen my knowledge in the world of tech.',
         curr: 'Resume',
