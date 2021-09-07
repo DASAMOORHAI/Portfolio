@@ -117,55 +117,62 @@ const Home = () => {
 
     return (
         <div className='bgImg'>
-            <div className='container'>
-                <button type='button' className='dropdownBtn' name='dropdownBtn' onClick={handleChange}><img name='dropdownBtn' onClick={handleChange} className='langIcon' src={imgs.page.globe} alt='lang'/></button>
-                <div className={open ? 'dropdown' : 'dropdown' + ' closedC'} id={langAnim ? 'langOpen' : 'langClose'}>
-                    <ul className='langList'>
-                        <li><button className='langBtn' type='button' onClick={handleChange} name='langEs'>Español</button></li>
-                        <li><button className='langBtn' type='button' onClick={handleChange} name='langEn'>English</button></li>
+            <div className='C-langContainer T-langContainer'>
+                <button type='button' className='C-langDropdownBtn T-langDropdownBtn' name='dropdownBtn' onClick={handleChange}><img name='dropdownBtn' onClick={handleChange} className='C-langIcon' src={imgs.page.globe} alt='lang'/></button>
+                <div className={open ? 'C-langDropdown T-langDropdown' : 'C-langDropdown T-langDropdown' + ' closed'} id={langAnim ? 'langOpen' : 'langClose'}>
+                    <ul className='C-langList'>
+                        <li><button className='C-langBtn T-langBtn' type='button' onClick={handleChange} name='langEs'>Español</button></li>
+                        <li><button className='C-langBtn T-langBtn' type='button' onClick={handleChange} name='langEn'>English</button></li>
                     </ul>
                 </div>
             </div>
             {/* Cellphone Sidebar */}
-            <button className={sidebarAnim ? 'focusSidebarC' : 'closedC'} onClick={handleChange} name='sidebarBtn'/>
-            <img src={imgs.sidebar.open} alt='' onClick={handleChange} className='closedSidebarBtnC' name='sidebarBtn'/>
-            <div className={sidebar ? 'sidebarContainerC' : 'sidebarContainerC' + ' closedC'} id={sidebarAnim ? 'open' : 'close'}>
-                <div className='sidebarC'>
+            <button className={sidebarAnim ? 'C-focusSidebar' : 'closed'} onClick={handleChange} name='sidebarBtn'/>
+            <img src={imgs.sidebar.open} alt='' onClick={handleChange} className='C-closedSidebarBtn' name='sidebarBtn'/>
+            <div className={sidebar ? 'C-sidebarContainer' : 'C-sidebarContainer' + ' closed'} id={sidebarAnim ? 'open' : 'close'}>
+                <div className='C-sidebar'>
                     <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='persInfo'>{texts[lang].sidebar.personalInf}</button>
                     <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='skills'>{texts[lang].sidebar.skillsS}</button>
                     <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='projects'>{texts[lang].sidebar.projectsS}</button>
                     <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='contact'>{texts[lang].sidebar.contactS}</button>
                 </div>
-                <img src={imgs.sidebar.close} alt='' onClick={handleChange} className='openedSidebarBtnC' name='sidebarBtn'/>
+                <img src={imgs.sidebar.close} alt='' onClick={handleChange} className='C-openedSidebarBtn' name='sidebarBtn'/>
             </div>
             {/* ----------------- */}
             {/* Tablet Sidebar */}
-            <div className='sidebarContainerT'>
-
+            <div className='T-sidebarContainer col-2'>
+                <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='persInfo'>{texts[lang].sidebar.personalInf}</button>
+                <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='skills'>{texts[lang].sidebar.skillsS}</button>
+                <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='projects'>{texts[lang].sidebar.projectsS}</button>
+                <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='contact'>{texts[lang].sidebar.contactS}</button>
             </div>
             {/* -------------- */}
             {/* Desktop Sidebar */}
 
             {/* --------------- */}
-            <div className='myInfoContainer col-10'>
-                <span className='fullName' id='persInfo'>Javier Iñaki Carro</span>
-                <span className='myPos'>Fullstack Web Developer</span>
-                <p className='desc'>{texts[lang].desc1}<br/>{texts[lang].desc2}</p>
-                <button className='cvBtn' onClick={handleDownload}>{texts[lang].curr}</button>
-            </div>
-            <div className='col-10'>
-                <h2 id='skills'>{texts[lang].skillsT}</h2>
-                <SkillList />
-            </div>
-            <div className='col-10'>
-                <h2 id='projects'>{texts[lang].projectsT}</h2>
-                <ProjectList projects={texts[lang].projects}/>
-            </div>
-            <div className='col-10'>
-                <h2 id='contact'>{texts[lang].contactT}</h2>
-                <div className='contactImgs'>
-                    <Link to={{pathname: "mailto:javier.carro.trabajo@gmail.com"}} target="_blank" rel="noopener noreferrer"><img src={imgs.contact.gmail} alt='Gmail'/></Link>
-                    <Link to={{pathname: 'https://www.linkedin.com/in/javier-iñaki-carro/'}} target='_blank' rel="noopener noreferrer"><img src={imgs.contact.linkedin} alt='LinkedIn'/></Link>
+            <div className='col-port'>
+                <button onClick={() => console.log('height: ', height, 'width: ', width)}>Check screen size</button>
+                <div className='myInfoContainer'>
+                    <span className='fullName' id='persInfo'>Javier Iñaki Carro</span>
+                    <span className='myPos'>Fullstack Web Developer</span>
+                    <p className='desc'>{texts[lang].desc1}<br/>{texts[lang].desc2}</p>
+                    <button className='cvBtn' onClick={handleDownload}>{texts[lang].curr}</button>
+                </div>
+                <div>
+                    <h2 id='skills'>{texts[lang].skillsT}</h2>
+                    <SkillList />
+                </div>
+                <div>
+                    <h2 id='projects'>{texts[lang].projectsT}</h2>
+                    <ProjectList projects={texts[lang].projects}/>
+                </div>
+                <div>
+                    <h2 id='contact'>{texts[lang].contactT}</h2>
+                    <div className='contactImgs'>
+                        <Link to={{pathname: "mailto:javier.carro.trabajo@gmail.com"}} target="_blank" rel="noopener noreferrer"><img src={imgs.contact.gmail} alt='Gmail'/></Link>
+                        <Link to={{pathname: 'https://www.linkedin.com/in/javier-iñaki-carro/'}} target='_blank' rel="noopener noreferrer"><img src={imgs.contact.linkedin} alt='LinkedIn'/></Link>
+                        <Link to={{pathname: 'https://github.com/DASAMOORHAI'}} target='_blank' rel="noopener noreferrer"><img src={imgs.contact.github} alt='GitHub'/></Link>
+                    </div>
                 </div>
             </div>
             <div className='clearer'/>

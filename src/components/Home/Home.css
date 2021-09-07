@@ -54,7 +54,7 @@
     animation-iteration-count: 1;
 }
 
-.container {
+.C-langContainer {
     position: fixed;
     display: inline-block;
     height: 7%;
@@ -63,7 +63,17 @@
     left: 0px;
     z-index: 2;
 }
-.dropdown {
+.T-langContainer {
+    position: fixed;
+    display: inline-block;
+    height: 15%;
+    width: 20%;
+    top: 2.5%;
+    left: 0px;
+    z-index: 2;
+}
+
+.C-langDropdown {
     position: absolute;
     top: 0.5px;
     left: 45%;
@@ -74,7 +84,19 @@
     background-color: black;
     z-index: 0;
 }
-.langList {
+.T-langDropdown {
+    position: absolute;
+    /* top: 0.5px; */
+    left: 45%;
+    height: 82%;
+    width: 300px;
+    border: 5px solid #ecc093;
+    border-radius: 0px 20px 20px 0px;
+    background-color: black;
+    z-index: 0;
+}
+
+.C-langList {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -87,7 +109,21 @@
     padding: 0px;
     list-style: none;
 }
-.langList li {
+.T-langList {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 90%;
+    top: -15.5px;
+    right: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.C-langList li {
     display: flex;
     align-items: center;
     height: 100%;
@@ -95,7 +131,16 @@
     border: 3px solid #d1a87e;
     border-radius: 25%;
 }
-.langBtn {
+.T-langList li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    border: 3px solid #d1a87e;
+    border-radius: 25%;
+}
+
+.C-langBtn {
     margin: 0px auto;
     color: white;
     background: none;
@@ -103,7 +148,27 @@
     font-family: 'Selznick Remix NF', Arial, sans-serif;
     font-size: 30px;
 }
-.dropdownBtn {
+.T-langBtn {
+    margin: 0px auto;
+    color: white;
+    background: none;
+    border: none;
+    font-family: 'Selznick Remix NF', Arial, sans-serif;
+    font-size: 30px;
+}
+
+.C-langDropdownBtn {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: #5a3925;
+    border-radius: 0px 30px 30px 0px;
+    border: none;
+    z-index: 1;
+}
+.T-langDropdownBtn {
     position: relative;
     height: 100%;
     width: 100%;
@@ -114,7 +179,15 @@
     border: none;
     z-index: 1;
 }
-.langIcon {
+
+.C-langIcon {
+    position: absolute;
+    height: 55%;
+    width: 60%;
+    right: 10%;
+    bottom: 22%;
+}
+.T-langIcon {
     position: absolute;
     height: 55%;
     width: 60%;
@@ -159,7 +232,7 @@
     animation-iteration-count: 1;
 }
 
-.sidebarContainerC {
+.C-sidebarContainer {
     position: fixed;
     display: flex;
     flex-direction: row-reverse;
@@ -170,7 +243,7 @@
     right: 0px;
     z-index: 4;
 }
-.sidebarC {
+.C-sidebar {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -183,26 +256,26 @@
     background-size: 100%;
     background-repeat: repeat-y;
 }
-.closedC {
+.closed {
     display: none;
 }
-.openedSidebarBtnC {
+.C-openedSidebarBtn {
     position: relative;
     display: inline-block;
     height: 100%;
-    min-width: 83.5%;
+    min-width: 68.5%;
     left: 3px;
     /* border: 1px solid red; */
 }
-.closedSidebarBtnC {
+.C-closedSidebarBtn {
     position: fixed;
     /* display: inline-block; */
     height: 100%;
-    width: 20%;
+    width: 16%;
     right: 0;
     z-index: 2;
 }
-.focusSidebarC {
+.C-focusSidebar {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -231,12 +304,12 @@
 }
 
 /* Tablet Styles */
-.sidebarContainerT {
+.T-sidebarContainer {
     position: fixed;
     flex-direction: row-reverse;
     align-content: flex-start;
-    width: 100%;
-    height: 20%;
+    width: 20%;
+    height: 100%;
     top: 0px;
     right: 0px;
     background-image: url(../../images/SidebarTablet.png);
@@ -263,7 +336,7 @@
     width: 100%;
     padding: 15px;
     font-family: 'Selznick Remix NF', Arial, sans-serif;
-    font-size: 43px;
+    font-size: 40px;
     text-shadow: 0 0 5px black;
     color: white;
     background-image: url(../../images/TitleBackdrop.png);
@@ -296,11 +369,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px 0px;
+    /* margin: 20px 0px; */
 }
 .indvSkillImg {
-    height: 40%;
-    width: 40%;
+    height: 30%;
+    width: 30%;
     border: 30px solid white;
     border-image-source: url(../../images/IconBorder.svg);
     border-image-slice: 135 fill;
@@ -329,6 +402,6 @@
     justify-content: space-around;
 }
 .contactImgs img {
-    height: 80%;
-    width: 40%;
+    height: 90%;
+    width: 50%;
 }

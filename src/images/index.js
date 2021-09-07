@@ -13,6 +13,7 @@ import TypeScript from './TypescriptLogo.png';
 import NodeJS from './NodeJSLogo.png';
 import gmail from './Gmail.png';
 import linkedin from './LinkedIn.png';
+import github from './GitHub.png';
 import ecom from './EcommerceImg.png';
 import poke from './PokeAppImg.png';
 
@@ -42,6 +43,7 @@ export default {
     },
     contact: {
         gmail,
-        linkedin
+        linkedin,
+        github
     }
 }

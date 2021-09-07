@@ -15,19 +15,37 @@
 }
 
 /* For mobile: */
-[class*="col-"] {
-  width: 100%;
-}
-.sidebarContainerT {
-  display: none;
+@media only screen and (max-width: 425px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  [class*="T-"] {
+    all: unset;
+  }
+  .T-sidebarContainer {
+    display: none;
+  }
+
+  [class*="C-"] {
+    all: revert;
+  }
 }
 
 @media only screen and (min-width: 426px) {
   /* For Tablet */
-  .closedSidebarBtnC {
+  .col-port {width: 83.33%;}
+  [class*="C-"] {
+    all: unset;
+  }
+  .C-closedSidebarBtn {
     display: none;
   }
-  .sidebarContainerT {
+
+  [class*="T-"] {
+    all: revert;
+  }
+  .T-sidebarContainer {
     display: flex;
   }
 }

@@ -25,7 +25,7 @@ export default {
         contactT: 'Contáctame'
     },
     en: {
-        sidebar: {personalInf: 'About me', skillsS: 'Skills', projectsS: 'Proyects', contactS: 'Contact me'},
+        sidebar: {personalInf: 'About me', skillsS: 'Skills', projectsS: 'Projects', contactS: 'Contact me'},
         desc1: `I'm a very creative programmer interested in learning new technologies with self-taught methods.`,
         desc2: 'Captivated by art and looking for a project that I am passionate about and that permits me to deepen my knowledge in the world of tech.',
         curr: 'Resume',
