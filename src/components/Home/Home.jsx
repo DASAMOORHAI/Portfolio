@@ -33,6 +33,7 @@ const Home = () => {
     }
 
     function handleButtonScroll(e) {
+        console.log(e.target.name)
         document.getElementById(e.target.name).scrollIntoView({behavior: 'smooth'});
         setSidebarAnim(false)
         setTimeout(() => {
@@ -115,43 +116,53 @@ const Home = () => {
         )
     }
 
+    function DSidebarOpts({text, name}) {
+        return (
+            <button><img /></button>
+        )
+    }
+
     return (
         <div className='bgImg'>
-            <div className='C-langContainer T-langContainer'>
-                <button type='button' className='C-langDropdownBtn T-langDropdownBtn' name='dropdownBtn' onClick={handleChange}><img name='dropdownBtn' onClick={handleChange} className='C-langIcon' src={imgs.page.globe} alt='lang'/></button>
-                <div className={open ? 'C-langDropdown T-langDropdown' : 'C-langDropdown T-langDropdown' + ' closed'} id={langAnim ? 'langOpen' : 'langClose'}>
-                    <ul className='C-langList'>
-                        <li><button className='C-langBtn T-langBtn' type='button' onClick={handleChange} name='langEs'>Español</button></li>
-                        <li><button className='C-langBtn T-langBtn' type='button' onClick={handleChange} name='langEn'>English</button></li>
+            <div className='langContainer'>
+                <button type='button' className='langDropdownBtn' name='dropdownBtn' onClick={handleChange}><img name='dropdownBtn' onClick={handleChange} className='langIcon' src={imgs.page.globe} alt='lang'/></button>
+                <div className={open ? 'langDropdown' : 'langDropdown' + ' closed'} id={langAnim ? 'langOpen' : 'langClose'}>
+                    <ul className='langList'>
+                        <li><button className='langBtn' type='button' onClick={handleChange} name='langEs'>Español</button></li>
+                        <li><button className='langBtn' type='button' onClick={handleChange} name='langEn'>English</button></li>
                     </ul>
                 </div>
             </div>
             {/* Cellphone Sidebar */}
-            <button className={sidebarAnim ? 'C-focusSidebar' : 'closed'} onClick={handleChange} name='sidebarBtn'/>
-            <img src={imgs.sidebar.open} alt='' onClick={handleChange} className='C-closedSidebarBtn' name='sidebarBtn'/>
-            <div className={sidebar ? 'C-sidebarContainer' : 'C-sidebarContainer' + ' closed'} id={sidebarAnim ? 'open' : 'close'}>
+            <button className={sidebarAnim ? 'focusSidebar' : 'closed'} onClick={handleChange} name='sidebarBtn'/>
+            <img src={imgs.sidebar.cell.open} alt='' onClick={handleChange} className='closedSidebarBtn' name='sidebarBtn'/>
+            <div className={sidebar ? 'sidebarContainer' : 'sidebarContainer' + ' closed'} id={sidebarAnim ? 'open' : 'close'}>
                 <div className='C-sidebar'>
-                    <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='persInfo'>{texts[lang].sidebar.personalInf}</button>
-                    <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='skills'>{texts[lang].sidebar.skillsS}</button>
-                    <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='projects'>{texts[lang].sidebar.projectsS}</button>
-                    <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='contact'>{texts[lang].sidebar.contactS}</button>
+                    <button className='C-sidebarOpts' type='button' onClick={handleButtonScroll} name='persInfo'>{texts[lang].sidebar.personalInf}</button>
+                    <button className='C-sidebarOpts' type='button' onClick={handleButtonScroll} name='skills'>{texts[lang].sidebar.skillsS}</button>
+                    <button className='C-sidebarOpts' type='button' onClick={handleButtonScroll} name='projects'>{texts[lang].sidebar.projectsS}</button>
+                    <button className='C-sidebarOpts' type='button' onClick={handleButtonScroll} name='contact'>{texts[lang].sidebar.contactS}</button>
                 </div>
-                <img src={imgs.sidebar.close} alt='' onClick={handleChange} className='C-openedSidebarBtn' name='sidebarBtn'/>
+                <img src={imgs.sidebar.cell.close} alt='' onClick={handleChange} className='openedSidebarBtn' name='sidebarBtn'/>
             </div>
             {/* ----------------- */}
             {/* Tablet Sidebar */}
-            <div className='T-sidebarContainer col-2'>
-                <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='persInfo'>{texts[lang].sidebar.personalInf}</button>
-                <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='skills'>{texts[lang].sidebar.skillsS}</button>
-                <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='projects'>{texts[lang].sidebar.projectsS}</button>
-                <button className='sidebarOpts' type='button' onClick={handleButtonScroll} name='contact'>{texts[lang].sidebar.contactS}</button>
+            <div className='T-sidebar col-2'>
+                <button className='T-sidebarOpts' type='button' onClick={handleButtonScroll} name='persInfo'>{texts[lang].sidebar.personalInf}</button>
+                <button className='T-sidebarOpts' type='button' onClick={handleButtonScroll} name='skills'>{texts[lang].sidebar.skillsS}</button>
+                <button className='T-sidebarOpts' type='button' onClick={handleButtonScroll} name='projects'>{texts[lang].sidebar.projectsS}</button>
+                <button className='T-sidebarOpts' type='button' onClick={handleButtonScroll} name='contact'>{texts[lang].sidebar.contactS}</button>
             </div>
             {/* -------------- */}
             {/* Desktop Sidebar */}
-
+            <div className='D-sidebar col-4'>
+                <DSidebarOpts text={texts[lang].sidebar.personalInf} name='persInfo'/>
+                <DSidebarOpts text={texts[lang].sidebar.skillsS} name='skills'/>
+                <DSidebarOpts text={texts[lang].sidebar.projectsS} name='projects'/>
+                <DSidebarOpts text={texts[lang].sidebar.contactS} name='contact'/>
+            </div>
             {/* --------------- */}
             <div className='col-port'>
-                <button onClick={() => console.log('height: ', height, 'width: ', width)}>Check screen size</button>
                 <div className='myInfoContainer'>
                     <span className='fullName' id='persInfo'>Javier Iñaki Carro</span>
                     <span className='myPos'>Fullstack Web Developer</span>

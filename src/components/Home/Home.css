@@ -54,7 +54,7 @@
     animation-iteration-count: 1;
 }
 
-.C-langContainer {
+.langContainer {
     position: fixed;
     display: inline-block;
     height: 7%;
@@ -63,17 +63,7 @@
     left: 0px;
     z-index: 2;
 }
-.T-langContainer {
-    position: fixed;
-    display: inline-block;
-    height: 15%;
-    width: 20%;
-    top: 2.5%;
-    left: 0px;
-    z-index: 2;
-}
-
-.C-langDropdown {
+.langDropdown {
     position: absolute;
     top: 0.5px;
     left: 45%;
@@ -84,19 +74,7 @@
     background-color: black;
     z-index: 0;
 }
-.T-langDropdown {
-    position: absolute;
-    /* top: 0.5px; */
-    left: 45%;
-    height: 82%;
-    width: 300px;
-    border: 5px solid #ecc093;
-    border-radius: 0px 20px 20px 0px;
-    background-color: black;
-    z-index: 0;
-}
-
-.C-langList {
+.langList {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -109,21 +87,7 @@
     padding: 0px;
     list-style: none;
 }
-.T-langList {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height: 100%;
-    width: 90%;
-    top: -15.5px;
-    right: 0px;
-    padding: 0px;
-    list-style: none;
-}
-
-.C-langList li {
+.langList li {
     display: flex;
     align-items: center;
     height: 100%;
@@ -131,16 +95,7 @@
     border: 3px solid #d1a87e;
     border-radius: 25%;
 }
-.T-langList li {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: 40%;
-    border: 3px solid #d1a87e;
-    border-radius: 25%;
-}
-
-.C-langBtn {
+.langBtn {
     margin: 0px auto;
     color: white;
     background: none;
@@ -148,16 +103,7 @@
     font-family: 'Selznick Remix NF', Arial, sans-serif;
     font-size: 30px;
 }
-.T-langBtn {
-    margin: 0px auto;
-    color: white;
-    background: none;
-    border: none;
-    font-family: 'Selznick Remix NF', Arial, sans-serif;
-    font-size: 30px;
-}
-
-.C-langDropdownBtn {
+.langDropdownBtn {
     position: relative;
     height: 100%;
     width: 100%;
@@ -168,26 +114,7 @@
     border: none;
     z-index: 1;
 }
-.T-langDropdownBtn {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    top: 0px;
-    left: 0px;
-    background-color: #5a3925;
-    border-radius: 0px 20px 20px 0px;
-    border: none;
-    z-index: 1;
-}
-
-.C-langIcon {
-    position: absolute;
-    height: 55%;
-    width: 60%;
-    right: 10%;
-    bottom: 22%;
-}
-.T-langIcon {
+.langIcon {
     position: absolute;
     height: 55%;
     width: 60%;
@@ -232,7 +159,7 @@
     animation-iteration-count: 1;
 }
 
-.C-sidebarContainer {
+.sidebarContainer {
     position: fixed;
     display: flex;
     flex-direction: row-reverse;
@@ -259,7 +186,7 @@
 .closed {
     display: none;
 }
-.C-openedSidebarBtn {
+.openedSidebarBtn {
     position: relative;
     display: inline-block;
     height: 100%;
@@ -267,7 +194,7 @@
     left: 3px;
     /* border: 1px solid red; */
 }
-.C-closedSidebarBtn {
+.closedSidebarBtn {
     position: fixed;
     /* display: inline-block; */
     height: 100%;
@@ -275,7 +202,7 @@
     right: 0;
     z-index: 2;
 }
-.C-focusSidebar {
+.focusSidebar {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -288,7 +215,7 @@
     z-index: 3;
 }
 
-.sidebarOpts {
+.C-sidebarOpts {
     position: relative;
     width: 150%;
     padding: 15% 0;
@@ -304,18 +231,73 @@
 }
 
 /* Tablet Styles */
-.T-sidebarContainer {
+.T-sidebar {
     position: fixed;
-    flex-direction: row-reverse;
-    align-content: flex-start;
-    width: 20%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
     height: 100%;
+    width: 20%;
     top: 0px;
     right: 0px;
     background-image: url(../../images/SidebarTablet.png);
     background-size: 100%;
     background-repeat: repeat-y;
     /* border: 1px solid blue; */
+}
+.T-sidebarOpts {
+    position: relative;
+    width: 150%;
+    padding: 15% 0;
+    /* right: 5%; */
+    font-size: xx-large;
+    text-shadow: 0 0 5px black;
+    background: url(../../images/TitleBackdropAlt.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    transform: rotate(90deg);
+}
+
+/*  Desktop Styles */
+.D-sidebar {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: center;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    background-image: url(../../images/SidebarTablet.png);
+    background-size: 100%;
+    background-repeat: repeat-y;
+    border: 1px solid blue;
+}
+.D-sidebarOpts {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0.5%;
+    width: 100%;
+    padding: 15% 0;
+    /* right: 5%; */
+    font-size: xx-large;
+    text-shadow: 0 0 5px black;
+    background: url(../../images/Title.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 60%;
+    border: 2px solid blue;
+}
+.D-sidebarOptsText {
+    position: relative;
+    border: 2px solid red;
 }
 
 /* ---------------------------------------------- */
@@ -362,19 +344,25 @@
 /* -- Skills -- */
 .indvSkillContainer {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-around;
     list-style: none;
     padding: 0px;
 }
 .indvSkill {
     display: flex;
+    align-content: center;
     flex-direction: column;
     align-items: center;
-    /* margin: 20px 0px; */
+    margin: 10px auto;
 }
 .indvSkillImg {
-    height: 30%;
-    width: 30%;
-    border: 30px solid white;
+    height: 35%;
+    width: 35%;
+    border: 20px solid white;
     border-image-source: url(../../images/IconBorder.svg);
     border-image-slice: 135 fill;
     border-image-repeat: stretch;

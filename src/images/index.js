@@ -19,8 +19,13 @@ import poke from './PokeAppImg.png';
 
 export default {
     sidebar: {
-        open,
-        close,
+        cell: {
+            open,
+            close
+        },
+        desk: {
+
+        }
     },
     page: {
         globe
