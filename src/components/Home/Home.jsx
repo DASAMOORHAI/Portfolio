@@ -12,6 +12,25 @@ const Home = () => {
     const [sidebarAnim, setSidebarAnim] = useState(false)
     const [sidebar, setSidebar] = useState(false)
 
+    window.addEventListener("scroll", function () {
+        var scrollPos = this.scrollY
+        if(scrollPos < 270) {
+            document.getElementById('persInfoBtn').className = 'D-sidebarOpts optSelect'
+            document.getElementById('skillsBtn').className = 'D-sidebarOpts optDeselect'
+        } else if(scrollPos >= 270 &&  scrollPos < 975) {
+            document.getElementById('persInfoBtn').className = 'D-sidebarOpts optDeselect'
+            document.getElementById('skillsBtn').className = 'D-sidebarOpts optSelect'
+            document.getElementById('projectsBtn').className = 'D-sidebarOpts optDeselect'
+        } else if(scrollPos >= 975 && scrollPos < 1700) {
+            document.getElementById('skillsBtn').className = 'D-sidebarOpts optDeselect'
+            document.getElementById('projectsBtn').className = 'D-sidebarOpts optSelect'
+            document.getElementById('contactBtn').className = 'D-sidebarOpts optDeselect'
+        } else if(scrollPos >= 1700) {
+            document.getElementById('projectsBtn').className = 'D-sidebarOpts optDeselect'
+            document.getElementById('contactBtn').className = 'D-sidebarOpts optSelect'
+        }
+    })
+
     const handleDropdownClose = (e) => {
         if(e.target.name === 'dropdownBtn') {
             document.removeEventListener('mousedown', handleDropdownClose)
@@ -33,7 +52,6 @@ const Home = () => {
     }
 
     function handleButtonScroll(e) {
-        console.log(e.target.name)
         document.getElementById(e.target.name).scrollIntoView({behavior: 'smooth'});
         setSidebarAnim(false)
         setTimeout(() => {
@@ -116,12 +134,6 @@ const Home = () => {
         )
     }
 
-    function DSidebarOpts({text, name}) {
-        return (
-            <button><img /></button>
-        )
-    }
-
     return (
         <div className='bgImg'>
             <div className='langContainer'>
@@ -155,11 +167,12 @@ const Home = () => {
             </div>
             {/* -------------- */}
             {/* Desktop Sidebar */}
-            <div className='D-sidebar col-4'>
-                <DSidebarOpts text={texts[lang].sidebar.personalInf} name='persInfo'/>
-                <DSidebarOpts text={texts[lang].sidebar.skillsS} name='skills'/>
-                <DSidebarOpts text={texts[lang].sidebar.projectsS} name='projects'/>
-                <DSidebarOpts text={texts[lang].sidebar.contactS} name='contact'/>
+            <div className='D-sidebarBG' />
+            <div className='D-sidebar col-3'>
+                <img className='D-sidebarOpts' id='persInfoBtn' src={imgs.sidebar.desk[lang].about} onClick={handleButtonScroll} name='persInfo' />
+                <img className='D-sidebarOpts' id='skillsBtn' src={imgs.sidebar.desk[lang].skills} onClick={handleButtonScroll} name='skills' />
+                <img className='D-sidebarOpts' id='projectsBtn' src={imgs.sidebar.desk[lang].projects} onClick={handleButtonScroll} name='projects' />
+                <img className='D-sidebarOpts' id='contactBtn' src={imgs.sidebar.desk[lang].contact} onClick={handleButtonScroll} name='contact' />
             </div>
             {/* --------------- */}
             <div className='col-port'>

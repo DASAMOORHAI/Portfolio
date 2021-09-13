@@ -19,6 +19,11 @@
   [class*="col-"] {
     width: 100%;
   }
+
+  li.indvProject img {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 426px) {
@@ -28,6 +33,7 @@
   .closedSidebarBtn {
     display: none;
   }
+
 
   div.T-sidebar {
     display: flex;
@@ -45,11 +51,15 @@
     height: 45%;
     width: 45%;
   }
+  li.indvProject img {
+    height: 100%;
+    width: 100%;
+  }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   /* For desktop: */
-  .col-port {width: 66.66%;}
+  .col-port {width: 75%;}
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;}
@@ -69,6 +79,26 @@
 
   div.D-sidebar {
     display: flex;
+  }
+  div.D-sidebarBG {
+    display: inline-block;
+  }
+  div.langContainer {
+    height: 12%;
+    width: 6.5%;
+  }
+  button.langBtn {
+    font-size: 45px;
+  }
+  span.fullName {
+    font-size: 75px;
+  }
+  p.desc {
+    font-size: 20px;
+  }
+  li.indvProject img {
+    height: 50%;
+    width: 75%;
   }
 }
 

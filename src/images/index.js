@@ -16,6 +16,14 @@ import linkedin from './LinkedIn.png';
 import github from './GitHub.png';
 import ecom from './EcommerceImg.png';
 import poke from './PokeAppImg.png';
+import aboutES from './TitleSobreMi.png';
+import aboutEN from './TitleAboutMe.png';
+import skillsES from './TitleHabilidades.png';
+import skillsEN from './TitleSkills.png';
+import projectsES from './TitleProyectos.png';
+import projectsEN from './TitleProjects.png';
+import contactES from './TitleContactame.png';
+import contactEN from './TitleContactMe.png';
 
 export default {
     sidebar: {
@@ -24,7 +32,18 @@ export default {
             close
         },
         desk: {
-
+            es: {
+                about: aboutES,
+                skills: skillsES,
+                projects: projectsES,
+                contact: contactES
+            },
+            en: {
+                about: aboutEN,
+                skills: skillsEN,
+                projects: projectsEN,
+                contact: contactEN
+            },
         }
     },
     page: {

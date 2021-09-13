@@ -9,12 +9,7 @@
 }
 
 .test {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;
-    align-items: center;
-    border: 2px solid blue;
+    border: 2px solid green;
 }
 
 .clearer {
@@ -263,41 +258,40 @@
 }
 
 /*  Desktop Styles */
+.optSelect {
+    top: 4%;
+    right: 7%;
+}
+.optDeselect {
+    top: 8%;
+    right: -8%;
+}
+
 .D-sidebar {
     position: fixed;
     display: none;
     flex-direction: column;
-    justify-content: space-around;
-    align-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     height: 100%;
     top: 0px;
     right: 0px;
+}
+.D-sidebarBG {
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 15%;
+    right: 1%;
     background-image: url(../../images/SidebarTablet.png);
-    background-size: 100%;
+    background-position: center center;
     background-repeat: repeat-y;
-    border: 1px solid blue;
+    background-size: 100%;
 }
 .D-sidebarOpts {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 0.5%;
-    width: 100%;
-    padding: 15% 0;
-    /* right: 5%; */
-    font-size: xx-large;
-    text-shadow: 0 0 5px black;
-    background: url(../../images/Title.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100% 60%;
-    border: 2px solid blue;
-}
-.D-sidebarOptsText {
-    position: relative;
-    border: 2px solid red;
+    transform: rotate(30deg);
+    margin: 4% 0;
 }
 
 /* ---------------------------------------------- */
@@ -378,6 +372,7 @@
     display: flex;
     flex-direction: column;
     align-content: flex-start;
+    align-items: center;
     padding: 15px;
     border: 5px solid lightyellow;
     border-image-source: url(../../images/FullTextBox.svg);
