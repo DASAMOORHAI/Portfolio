@@ -136,6 +136,9 @@ const Home = () => {
 
     return (
         <div className='bgImg'>
+            <div className='landscapeLock'>
+                <p>Landscape mode is currently under development, on the meantime please read the portfolio on Portrait mode, sorry for the inconvenience <br /> / <br /> El modo horizontal está bajo desarrollo, mientras tanto por favor lea el portfolio en modo vertical, disculpe la molestia</p>
+            </div>
             <div className='langContainer'>
                 <button type='button' className='langDropdownBtn' name='dropdownBtn' onClick={handleChange}><img name='dropdownBtn' onClick={handleChange} className='langIcon' src={imgs.page.globe} alt='lang'/></button>
                 <div className={open ? 'langDropdown' : 'langDropdown' + ' closed'} id={langAnim ? 'langOpen' : 'langClose'}>
@@ -169,10 +172,10 @@ const Home = () => {
             {/* Desktop Sidebar */}
             <div className='D-sidebarBG' />
             <div className='D-sidebar col-3'>
-                <img className='D-sidebarOpts' id='persInfoBtn' src={imgs.sidebar.desk[lang].about} onClick={handleButtonScroll} name='persInfo' />
-                <img className='D-sidebarOpts' id='skillsBtn' src={imgs.sidebar.desk[lang].skills} onClick={handleButtonScroll} name='skills' />
-                <img className='D-sidebarOpts' id='projectsBtn' src={imgs.sidebar.desk[lang].projects} onClick={handleButtonScroll} name='projects' />
-                <img className='D-sidebarOpts' id='contactBtn' src={imgs.sidebar.desk[lang].contact} onClick={handleButtonScroll} name='contact' />
+                <img className='D-sidebarOpts optSelect' id='persInfoBtn' src={imgs.sidebar.desk[lang].about} onClick={handleButtonScroll} name='persInfo' />
+                <img className='D-sidebarOpts optDeselect' id='skillsBtn' src={imgs.sidebar.desk[lang].skills} onClick={handleButtonScroll} name='skills' />
+                <img className='D-sidebarOpts optDeselect' id='projectsBtn' src={imgs.sidebar.desk[lang].projects} onClick={handleButtonScroll} name='projects' />
+                <img className='D-sidebarOpts optDeselect' id='contactBtn' src={imgs.sidebar.desk[lang].contact} onClick={handleButtonScroll} name='contact' />
             </div>
             {/* --------------- */}
             <div className='col-port'>

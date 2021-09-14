@@ -8,12 +8,35 @@
     z-index: 0;
 }
 
-.test {
-    border: 2px solid green;
-}
-
 .clearer {
     clear: both;
+}
+
+.landscapeLock {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../../images/Background.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1000;
+}
+
+.landscapeLock p {
+    height: fit-content;
+    width: 60%;
+    padding: 5%;
+    border-image-source: url(../../images/FullTextBox.svg);
+    border-image-slice: 0 fill;
+    border-image-repeat: stretch;
 }
 
 /* -- Language Selection -- */
